@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 50px 60vh 50px;
+        grid-template-areas:
+          "header header header"
+          "left middle right"
+          "footer footer footer";
+        background-color: aqua;
+        gap: 10px;
+      }
+      .header {
+        grid-area: header;
+        background-color: aquamarine;
+      }
+      .left {
+        grid-area: left;
+        background-color: cadetblue;
+      }
+      .middle {
+        grid-area: middle;
+        background-color: darkgreen;
+      }
+      .right {
+        grid-area: right;
+        background-color: hotpink;
+      }
+      .footer {
+        grid-area: footer;
+        background-color: darkturquoise;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header"></div>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="middle"></div>
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>
