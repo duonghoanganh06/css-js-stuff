@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .tablink {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+      }
+      .tablink:hover {
+        background-color: #777;
+      }
+      .tabcontent {
+        color: white;
+        display: none;
+        padding: 100px 20px;
+        height: 100%;
+      }
+      #home {
+        background-color: red;
+      }
+      #news {
+        background-color: green;
+      }
+      #contact {
+        background-color: blue;
+      }
+      #about {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="tablink" onclick="openPage('home', this, 'red')">
+      Home
+    </button>
+    <button
+      class="tablink"
+      onclick="openPage('news', this, 'green')"
+      id="defaultOpen"
+    >
+      News
+    </button>
+    <button class="tablink" onclick="openPage('contact', this, 'blue')">
+      Contact
+    </button>
+    <button class="tablink" onclick="openPage('about', this, 'orange')">
+      About
+    </button>
+
+    <div class="tabcontent" id="home">
+      <h3>Home</h3>
+      <p>Home is where the heart is..</p>
+    </div>
+    <div class="tabcontent" id="news">
+      <h3>News</h3>
+      <p>Some news this fine day!</p>
+    </div>
+    <div class="tabcontent" id="contact">
+      <h3>Contact</h3>
+      <p>Get in touch, or swing by for a cup of coffee.</p>
+    </div>
+    <div class="tabcontent" id="about">
+      <h3>About</h3>
+      <p>Who we are and what we do.</p>
+    </div>
+
+    <script>
+      function openPage(pageName, elm, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+
+        document.getElementById(pageName).style.display = "block";
+
+        elm.style.backgroundColor = color;
+      }
+      document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>

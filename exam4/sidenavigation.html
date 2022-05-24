@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+      }
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      #main {
+        transition: margin-left 0.5s;
+        padding: 20px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="">About</a>
+      <a href="">Services</a>
+      <a href="">Clients</a>
+      <a href="">Contact</a>
+    </div>
+
+    <span onclick="openNav()">open</span>
+
+    <div id="main">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus quaerat
+      dolor est consequatur unde, debitis tenetur vero repellat inventore esse
+      repudiandae, nesciunt impedit, excepturi quis quod ratione ipsum expedita
+      repellendus?
+    </div>
+    <script>
+      function openNav() {
+        //đè lên
+        document.getElementById("mySidenav").style.width = "250px";
+
+        //đẩy sang phải
+        document.getElementById("main").style.marginLeft = "250px";
+
+        //đẩy sang và làm mờ trang
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+
+        //đẩy sang toàn trang luôn
+        // document.getElementById("mySidenav").style.width = "100%";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
+      }
+    </script>
+  </body>
+</html>
